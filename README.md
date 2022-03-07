@@ -105,6 +105,8 @@ You may add a file `.nsprc` to your project root directory to manage the excepti
     "notes": "Ignored since we don't use xxx method"
   },
   "980": "Ignored since we don't use xxx method",
+  "https://github.com/advisories/GHSA-93q8-gq69-wqmw": "Github vulnerability URLs are supported as well",
+  "GHSA-qrpm-p2h7-hrv2": "GHSA is also possible",
   "Note": "Any non number key will not be accepted"
 }
 ```

@@ -31,7 +31,6 @@ export default function handleInput(options: CommandOptions, fn: (T1: string, T2
     .filter((e) => e !== '');
   const exceptionIds: string[] = getExceptionsIds(nsprc, cmdExceptions);
   const cmdModuleIgnore: string[] = get(options, 'moduleIgnore', '').split(',');
-  console.log(auditCommand, auditLevel, exceptionIds);
 
   fn(auditCommand, auditLevel, exceptionIds, cmdModuleIgnore);
 }
