@@ -10,8 +10,8 @@ import { processAuditJson } from '../utils/vulnerability';
  * @param  {Array} modulesToIgnore   List of vulnerable modules to ignore in audit results
  * @return {undefined}
  */
-export default function handleFinish(jsonBuffer: string, auditLevel: AuditLevel, exceptionIds: number[], modulesToIgnore: string[]): void {
-  const { unhandledIds, vulnerabilityIds, vulnerabilityModules, report, failed } = processAuditJson(
+export default function handleFinish(jsonBuffer: string, auditLevel: AuditLevel, exceptionIds: string[], modulesToIgnore: string[]): void {
+  const { unhandledIds, vulnerabilityIds, vulnerabilityUrls, vulnerabilityGhsa, vulnerabilityModules, report, failed } = processAuditJson(
     jsonBuffer,
     auditLevel,
     exceptionIds,
@@ -32,7 +32,9 @@ export default function handleFinish(jsonBuffer: string, auditLevel: AuditLevel,
   }
 
   // Grab any un-filtered vulnerabilities at the appropriate level
-  const unusedExceptionIds = exceptionIds.filter((id) => !vulnerabilityIds.includes(id));
+  const unusedExceptionIds = exceptionIds.filter(
+    (id) => !vulnerabilityIds.includes(+id) && !vulnerabilityUrls.includes(id) && !vulnerabilityGhsa.includes(id),
+  );
   const unusedIgnoredModules = modulesToIgnore.filter((moduleName) => !vulnerabilityModules.includes(moduleName));
 
   const messages = [
