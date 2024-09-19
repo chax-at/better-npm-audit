@@ -17,7 +17,7 @@ module.exports = {
     'max-len': ['error', { code: 140, ignoreUrls: true }],
     'object-curly-spacing': ['off'],
     // eslint-disable-next-line prettier/prettier
-    'indent': ['error', 2, { SwitchCase: 1 }],
+    indent: ['error', 2, { SwitchCase: 1 }],
   },
   ignorePatterns: ['lib'],
   plugins: ['prettier'],

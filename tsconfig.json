@@ -1,22 +1,14 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "lib": [
-            "ES6",
-            "ES2015"
-        ],
-        "outDir": "lib",
-        "strict": true,
-        "types": [
-            "node",
-            "mocha"
-        ],
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "baseUrl": "",
-    },
-    "exclude": [
-        "test",
-    ],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["ES6", "ES2015"],
+    "outDir": "lib",
+    "strict": true,
+    "types": ["node", "mocha"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": ""
+  },
+  "exclude": ["test"]
 }
