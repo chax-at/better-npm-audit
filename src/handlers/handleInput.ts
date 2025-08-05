@@ -13,7 +13,7 @@ export default function handleInput(options: CommandOptions, fn: (T1: string, T2
   const auditCommand: string = [
     'npm audit',
     // flags
-    get(options, 'production') ? '--production' : '',
+    get(options, 'production') ? '--omit=dev' : '--include=dev',
     get(options, 'registry') ? `--registry=${options.registry}` : '',
   ]
     .filter(Boolean)
